@@ -10,16 +10,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const geofenceRoutes = require('D:/geotude-backend/routes/geofence');
+const geofenceRoutes = require('./routes/geofence');
 app.use('/api/geofences', geofenceRoutes);
 
 
 // Routes
-const locationRoutes = require('D:/geotude-backend/routes/LocationRoutes');
+const locationRoutes = require('./routes/LocationRoutes');
 app.use('/api/locations', locationRoutes);
 
 // Import user routes
-const userRoutes = require('D:/geotude-backend/routes/UserRoutes'); // Import the new user routes
+const userRoutes = require('./routes/UserRoutes'); // Import the new user routes
 app.use('/api/users', userRoutes); // Add a new base route for users
 
 // MongoDB Connection
